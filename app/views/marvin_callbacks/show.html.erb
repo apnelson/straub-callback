@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Raw xml:</strong>
+  <%= @marvin_callback.raw_xml %>
+</p>
+
+<p>
+  <strong>Import status:</strong>
+  <%= @marvin_callback.import_status %>
+</p>
+
+<p>
+  <strong>Import status details:</strong>
+  <%= @marvin_callback.import_status_details %>
+</p>
+
+<p>
+  <strong>Guid:</strong>
+  <%= @marvin_callback.guid %>
+</p>
+
+<p>
+  <strong>Orig stamp:</strong>
+  <%= @marvin_callback.orig_stamp %>
+</p>
+
+<%= link_to 'Edit', edit_marvin_callback_path(@marvin_callback) %> |
+<%= link_to 'Back', marvin_callbacks_path %>

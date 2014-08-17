@@ -1,0 +1,15 @@
+<%= simple_form_for(@marvin_callback) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :raw_xml %>
+    <%= f.input :import_status %>
+    <%= f.input :import_status_details %>
+    <%= f.input :guid %>
+    <%= f.input :orig_stamp %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

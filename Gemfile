@@ -14,6 +14,8 @@ gem 'foundation-rails'
 gem 'high_voltage'
 gem 'mysql2'
 gem 'simple_form'
+gem 'guid'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -32,6 +34,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
+  gem 'byebug'
+  gem 'rest_client'
 end
 group :test do
   gem 'capybara'

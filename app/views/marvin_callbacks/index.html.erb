@@ -1,0 +1,33 @@
+<h1>Listing marvin_callbacks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Raw xml</th>
+      <th>Import status</th>
+      <th>Import status details</th>
+      <th>Guid</th>
+      <th>Orig stamp</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @marvin_callbacks.each do |marvin_callback| %>
+      <tr>
+        <td><%= marvin_callback.raw_xml %></td>
+        <td><%= marvin_callback.import_status %></td>
+        <td><%= marvin_callback.import_status_details %></td>
+        <td><%= marvin_callback.guid %></td>
+        <td><%= marvin_callback.orig_stamp %></td>
+        <td><%= link_to 'Show', marvin_callback %></td>
+        <td><%= link_to 'Edit', edit_marvin_callback_path(marvin_callback) %></td>
+        <td><%= link_to 'Destroy', marvin_callback, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Marvin callback', new_marvin_callback_path %>
