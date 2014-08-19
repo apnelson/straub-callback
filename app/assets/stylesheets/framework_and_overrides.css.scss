@@ -90,3 +90,7 @@ section {
   @extend .radius;
   @extend .tiny;
 }
+
+tr.even {
+  background-color: #f3f3f3 !important;
+}
