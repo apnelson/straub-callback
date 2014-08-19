@@ -15,6 +15,9 @@ gem 'high_voltage'
 gem 'mysql2'
 gem 'simple_form'
 gem 'guid'
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'thin'
+
 
 group :development do
   gem 'better_errors'
