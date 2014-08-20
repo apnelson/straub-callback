@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<h3>Details:</h3>
 
 <p>
   <strong>Raw xml:</strong>
@@ -22,8 +22,5 @@
 
 <p>
   <strong>Orig stamp:</strong>
-  <%= @marvin_callback.orig_stamp %>
+  <%= Time.at(@marvin_callback.timestamp) %> (<%= @marvin_callback.timestamp %>)
 </p>
-
-<%= link_to 'Edit', edit_marvin_callback_path(@marvin_callback) %> |
-<%= link_to 'Back', marvin_callbacks_path %>

@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <% @marvin_callbacks.each do |mcb| %>
-    <tr class='<%= mcb.import_status.downcase.tr(' ', '_') %>'>
+    <tr class='mcb-row <%= mcb.import_status.downcase.tr(' ', '_') %>' mcb='<%= mcb.id %>'>
       <td><%= Time.at(mcb.timestamp) %></td>
       <td><%= mcb.guid %></td>
       <td><%= mcb.import_status %></td>
@@ -18,3 +18,4 @@
     <% end %>
   </tbody>
 </table>
+<div id="detail-modal" class="reveal-modal" data-reveal></div>

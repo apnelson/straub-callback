@@ -34,6 +34,9 @@ class MarvinCallbacksController < ApplicationController
   # GET /marvin_callbacks/1
   # GET /marvin_callbacks/1.json
   def show
+    respond_to do |format|
+      format.html { render partial: 'show' }
+    end
   end
 
   private

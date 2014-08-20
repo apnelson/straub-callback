@@ -20,6 +20,29 @@
 $(function() {
   $(document).foundation();
 });
-$(document).ready(function ()  {
+
+var ready
+ready = function ()  {
     $('.datatable').dataTable()
-})
+    setupDetailClick();
+    $('.datatable').on('page.dt search.dt order.dt draw.dt', function () {
+      setupDetailClick();
+    })
+}
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
+function setupDetailClick() {
+  $('tr.mcb-row').on('click', function () {
+    $this = $(this)
+    $.ajax({
+          url: '/marvin_callbacks/' + $this.attr('mcb'),
+          success: function (d,s,x) {
+            $('#detail-modal').html(d + '<a class="close-reveal-modal">&#215;</a>').foundation('reveal', 'open');
+          },
+          dataType: 'html'
+    });
+
+  })
+}
