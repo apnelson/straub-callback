@@ -31,6 +31,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    if @user.destroy
+      flash[:success] = "The user has been deleted."
+      redirect_to users_path
+    else
+      flash[:alert] = @user.errors.full_messages.join(", ")
+      render :edit
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
