@@ -15,7 +15,14 @@ class UsersController < ApplicationController
   end
 
   def create
-
+    @user = User.new(user_params)
+    if @user.save
+      flash[:success] = "The user has been successfully updated."
+      redirect_to users_path
+    else
+      flash[:alert] = @user.errors.full_messages.join(", ")
+      render :new
+    end
   end
 
   def edit
