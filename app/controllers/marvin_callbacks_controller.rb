@@ -11,6 +11,9 @@ class MarvinCallbacksController < ApplicationController
   def callback_handler
     require 'nokogiri'
     @marvin_callback = MarvinCallback.new(marvin_callback_params)
+    fd = File.open("callback_logs/raw.txt", "a+")
+    fd.write request.body.read + "\n\n"
+    fd.close
     @marvin_callback.raw_xml = request.body.read
     xml_data = Nokogiri::Slop(@marvin_callback.raw_xml)
     @marvin_callback.import_status = xml_data.FileImportStatus.import_status.content
