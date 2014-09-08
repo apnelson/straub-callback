@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140817213249) do
+ActiveRecord::Schema.define(version: 20140908184622) do
 
   create_table "marvin_callbacks", force: true do |t|
     t.text     "raw_xml"
     t.string   "import_status"
     t.text     "import_status_details"
     t.string   "guid"
-    t.integer  "timestamp"
+    t.datetime "timestamp"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
